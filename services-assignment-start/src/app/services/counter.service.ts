@@ -1,3 +1,6 @@
+import {Injectable} from '@angular/core';
+
+@Injectable({providedIn: 'root'})
 export class CounterService {
   private _toInactive = 0;
   private _toActive = 0;
