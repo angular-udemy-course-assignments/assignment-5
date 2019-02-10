@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {UsersService} from './services/users.service';
 import {CounterService} from './services/counter.service';
 
@@ -8,13 +8,8 @@ import {CounterService} from './services/counter.service';
   styleUrls: ['./app.component.css'],
   providers: [UsersService, CounterService]
 })
-export class AppComponent implements OnInit {
-  inactiveUsers;
-  activeUsers;
-
-  constructor(private usersService: UsersService,
-              private  counterService: CounterService) {
-
+export class AppComponent {
+  constructor(private  counterService: CounterService) {
   }
 
   getToInactive(): number {
@@ -24,11 +19,4 @@ export class AppComponent implements OnInit {
   getToActive(): number {
     return this.counterService.getInactiveToActive;
   }
-
-  ngOnInit(): void {
-    this.inactiveUsers = this.usersService.inactiveUsers;
-    this.activeUsers = this.usersService.activeUsers;
-  }
-
-
 }
